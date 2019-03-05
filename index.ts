@@ -3,7 +3,8 @@ import router from './routes/router';
 import bodyParser from 'body-parser';
 import cors from 'cors';
 
-const server = new Server();
+// Única instancia del servidor
+const server = Server.instance;
 
 // BodyParser: todo los datos enviados son convertidos en objetos de JavaScript 
 server.app.use(bodyParser.urlencoded({extended: true}));
