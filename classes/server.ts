@@ -31,14 +31,15 @@ export default class Server {
         this.io.on('connection', cliente => {
             //console.log('Cliente Conectado', socket.eventDataTime());
             // Conectar cliente
-            socket.conectarCliente(cliente);
+            socket.conectarCliente(cliente, this.io);
             // Configurar usuario
             socket.usuario(cliente, this.io);
             // Desconectar
-            socket.desconectar(cliente);
+            socket.desconectar(cliente , this.io);
             // Escuchar mensajes
             socket.mensaje(cliente, this.io);
-           
+           // Obtener usuarios
+           socket.obtenerUsuarios(cliente);
         });
     }
 

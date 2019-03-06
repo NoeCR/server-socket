@@ -12,7 +12,7 @@ export class usuariosLista {
     public agregar(usuario: Usuario){
         this.lista.push(usuario);
         console.log(this.lista);
-        return usuario
+        return usuario;
     }
 
     public actualizarNombre(id: string, nombre: string){
@@ -27,7 +27,7 @@ export class usuariosLista {
     }
     // Obtener lista de usuarios
     public getLista(){
-        return this.lista;
+        return this.lista.filter(usuario => usuario.nombre !== 'anonimo')
     }
 
     public getUsuario(id: string){
